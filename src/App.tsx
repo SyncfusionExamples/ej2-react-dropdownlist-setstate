@@ -1,12 +1,9 @@
-# DropDownList component value change through setState
- 
- Need to change the value through setState in change event in which value and dataSource properties are maintain in state.
+import * as React from 'react';
 
-## Solution
+import { DropDownListComponent, ChangeEventArgs } from '@syncfusion/ej2-react-dropdowns';
+import './App.css';
 
-You can change the value through setState method and need to check the condition like e.isInteracted. Please refer the below code.
-
-```
+export default class App extends React.Component<any, any> {
   private contacts: { [key: string]: Object }[] = [
     { displayName: 'bob', id: 'abc' },
     { displayName: 'tom', id: 'efg' }
@@ -27,22 +24,4 @@ You can change the value through setState method and need to check the condition
       <DropDownListComponent dataSource={this.state.contacts} id="ddlelement" change={this.onChange} value={this.state.contactId} fields={this.fields} />
     );
   }
-```
-
-## Installing and Running Application
-
-### Installing
-
-To install all dependent packages, use the below command
-
-```
-npm install
-```
-
-### Run the application
-
-To compile and run the source files, use the below command
-
-```
-npm start
-```
+}
